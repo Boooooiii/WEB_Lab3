@@ -73,6 +73,7 @@ onMounted(async () => {
     if (user && user.id) {
         await store.fetchState(user.id); 
     } else {
+      alert("Увійдіть в акаунт щоб користуватися калькулятором!");
         router.push('/auth'); 
     }
 });
