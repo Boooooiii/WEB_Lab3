@@ -19,14 +19,12 @@ export const store = reactive({
         try {
             await calcService.saveState(userId, this.state);
         } catch (e) {
-            console.error("Помилка збереження", e);
+            console.error("ДЋГ®Д›ДЌГ«Д™Е• Г§ГЎДєД‘ДєД‡ДєГ­Г­Л™", e);
         }
     },
 
     dispatch(actionType, payload) {
-        // Отримуємо новий стан з ред'юсера
         const newState = this.reducer(this.state, actionType, payload);
-        // Оновлюємо наш реактивний state новими даними
         Object.assign(this.state, newState);
     },
 
@@ -58,7 +56,6 @@ export const store = reactive({
                 };
 
             case 'FAST OP':
-                // Створюємо копію для розрахунку "швидкої" операції (квадрат, корінь)
                 const tempState = { ...state, operator: payload };
                 const resultF = this.calculate(tempState);
                 return { ...state, currentValue: String(resultF) };
