@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://calculator-backend-gyf3.onrender.com/api'; // Адреса вашого бекенду
+const API_URL = 'https://calculator-backend-gyf3.onrender.com/api'; 
 
 const api = axios.create({
     baseURL: API_URL,
