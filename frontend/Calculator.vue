@@ -65,10 +65,14 @@ import { onMounted } from 'vue';
 import { computed } from 'vue';
 import { store } from './JS/store.js';
 
+const router = useRouter();
+
 onMounted(async () => {
     const user = JSON.parse(localStorage.getItem('currentUser'));
     if (user && user.id) {
-        await store.fetchState(user.id);
+        await store.fetchState(user.id); 
+    } else {
+        router.push('/auth'); 
     }
 });
 
