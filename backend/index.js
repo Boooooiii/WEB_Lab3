@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL || 'postgresql://calculator_5q4v_user:melrgcck142bxiG4FaM38PFMq3qra3T3@dpg-d7plf5v7f7vs739nk8tg-a.oregon-postgres.render.com/calculator_5q4v',
+    connectionString: process.env.DATABASE_URL,
     ssl: {
         rejectUnauthorized: false
     }
@@ -29,7 +29,7 @@ app.post('/api/auth/login', async (req, res) => {
     } catch (err) { res.status(500).json({ message: "Server error" }); }
 });
 
-// Реєстрація
+// ГђГҐВєГ±ГІГ°Г Г¶ВіГї
 app.post('/api/auth/register', async (req, res) => {
     const { login, password, email } = req.body;
     try {
@@ -49,7 +49,7 @@ app.put('/api/users/:userId', async (req, res) => {
         res.json(result.rows[0]); 
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: "Помилка при оновленні бази даних" });
+        res.status(500).json({ message: "ГЏГ®Г¬ГЁГ«ГЄГ  ГЇГ°ГЁ Г®Г­Г®ГўГ«ГҐГ­Г­Ві ГЎГ Г§ГЁ Г¤Г Г­ГЁГµ" });
     }
 });
 
