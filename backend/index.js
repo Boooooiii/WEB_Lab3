@@ -29,7 +29,6 @@ app.post('/api/auth/login', async (req, res) => {
     } catch (err) { res.status(500).json({ message: "Server error" }); }
 });
 
-// Ðåºñòðàö³ÿ
 app.post('/api/auth/register', async (req, res) => {
     const { login, password, email } = req.body;
     try {
